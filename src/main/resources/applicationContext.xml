@@ -24,6 +24,12 @@
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
     </bean>
 
+    <!-- 
+    <bean id="errorDAO" class="com.newsocial.dao.ErrorDaoImpl">
+        <constructor-arg name="mongoOps" ref="mongoTemplate"/>
+    </bean>
+     -->
+
     <bean id="userDAO" class="com.newsocial.dao.UserDAOImpl">
         <constructor-arg name="mongoOps" ref="mongoTemplate"/>
     </bean>

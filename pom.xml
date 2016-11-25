@@ -9,6 +9,7 @@
           <spring-version>3.2.2.RELEASE</spring-version>
           <spring-data-mongodb-version>1.2.0.RELEASE</spring-data-mongodb-version>
           <jersey-version>1.17.1</jersey-version>
+          <slf4j.version>1.6.1</slf4j.version>
     </properties>
 
     <dependencies>
@@ -86,6 +87,13 @@
             <version>2.6.2</version>
         </dependency>
 
+        <!-- Joda time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
         <dependency>
               <groupId>junit</groupId>
               <artifactId>junit</artifactId>
@@ -102,6 +110,18 @@
               <groupId>commons-httpclient</groupId>
               <artifactId>commons-httpclient</artifactId>
               <version>3.1</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>

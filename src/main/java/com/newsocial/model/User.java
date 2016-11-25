@@ -5,14 +5,17 @@ public class User {
     private String  id;
     private String  username;
     private String  password;
+    private String  encryptedPassword;
     private String  email;
     private String  name;
     private String  surname;
     private String  birthday;
     private String  birthmonth;
     private String  birthyear;
-    private Integer birthdate;
+    private Long    birthdate;
+    private Integer age;
     private String  nationality;
+    private String  idCountry;
 
     private String  notes;
     private String  bio;
@@ -20,10 +23,20 @@ public class User {
     private String  city;
     private Picture picture;
 
-    private Integer signUpDate;
-    private Integer lastLoginDate;
+    private Long    signUpDate;
+    private String  signUpDateFormat;
+    private Long    lastUpdateDate;
+    private String  lastUpdateFormat;
+    private Long    lastLoginDate;
+    private String  lastLoginDateFormat;
     private Boolean active;
     private Boolean isPrivate;
+
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
     public String getId() {
         return id;
@@ -42,6 +55,12 @@ public class User {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getEncryptedPassword() {
+        return encryptedPassword;
+    }
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
     }
     public String getEmail() {
         return email;
@@ -79,10 +98,10 @@ public class User {
     public void setBirthyear(String birthyear) {
         this.birthyear = birthyear;
     }
-    public Integer getBirthdate() {
+    public Long getBirthdate() {
         return birthdate;
     }
-    public void setBirthdate(Integer birthdate) {
+    public void setBirthdate(Long birthdate) {
         this.birthdate = birthdate;
     }
     public String getNationality() {
@@ -115,16 +134,16 @@ public class User {
     public void setCity(String city) {
         this.city = city;
     }
-    public Integer getSignUpDate() {
+    public Long getSignUpDate() {
         return signUpDate;
     }
-    public void setSignUpDate(Integer signUpDate) {
+    public void setSignUpDate(Long signUpDate) {
         this.signUpDate = signUpDate;
     }
-    public Integer getLastLoginDate() {
+    public Long getLastLoginDate() {
         return lastLoginDate;
     }
-    public void setLastLoginDate(Integer lastLoginDate) {
+    public void setLastLoginDate(Long lastLoginDate) {
         this.lastLoginDate = lastLoginDate;
     }
     public Boolean getActive() {
@@ -145,17 +164,58 @@ public class User {
     public void setIsPrivate(Boolean isPrivate) {
         this.isPrivate = isPrivate;
     }
+    public String getSignUpDateFormat() {
+        return signUpDateFormat;
+    }
+    public void setSignUpDateFormat(String signUpDateFormat) {
+        this.signUpDateFormat = signUpDateFormat;
+    }
+    public Long getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+    public void setLastUpdateDate(Long lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+    public String getLastUpdateFormat() {
+        return lastUpdateFormat;
+    }
+    public void setLastUpdateFormat(String lastUpdateFormat) {
+        this.lastUpdateFormat = lastUpdateFormat;
+    }
+    public String getLastLoginDateFormat() {
+        return lastLoginDateFormat;
+    }
+    public void setLastLoginDateFormat(String lastLoginDateFormat) {
+        this.lastLoginDateFormat = lastLoginDateFormat;
+    }
+    public String getIdCountry() {
+        return idCountry;
+    }
+    public void setIdCountry(String idCountry) {
+        this.idCountry = idCountry;
+    }
+    public Integer getAge() {
+        return age;
+    }
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     @Override
     public String toString() {
         return "User [id=" + id + ", username=" + username + ", password="
-                + password + ", email=" + email + ", name=" + name
-                + ", surname=" + surname + ", birthday=" + birthday
-                + ", birthmonth=" + birthmonth + ", birthyear=" + birthyear
-                + ", birthdate=" + birthdate + ", nationality=" + nationality
-                + ", notes=" + notes + ", bio=" + bio + ", country=" + country
-                + ", city=" + city + ", picture=" + picture + ", signUpDate="
-                + signUpDate + ", lastLoginDate=" + lastLoginDate + ", active="
+                + password + ", encryptedPassword=" + encryptedPassword
+                + ", email=" + email + ", name=" + name + ", surname="
+                + surname + ", birthday=" + birthday + ", birthmonth="
+                + birthmonth + ", birthyear=" + birthyear + ", birthdate="
+                + birthdate + ", age=" + age + ", nationality=" + nationality
+                + ", idCountry=" + idCountry + ", notes=" + notes + ", bio="
+                + bio + ", country=" + country + ", city=" + city
+                + ", picture=" + picture + ", signUpDate=" + signUpDate
+                + ", signUpDateFormat=" + signUpDateFormat
+                + ", lastUpdateDate=" + lastUpdateDate + ", lastUpdateFormat="
+                + lastUpdateFormat + ", lastLoginDate=" + lastLoginDate
+                + ", lastLoginDateFormat=" + lastLoginDateFormat + ", active="
                 + active + ", isPrivate=" + isPrivate + "]";
     }
 
